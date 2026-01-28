@@ -172,3 +172,5 @@ function add_jfif_support($mimes) {
 }
 
 // ==================== with dump wp_cli ====================
+// ==================== without dump wp_cli, +script bat ====================
+
