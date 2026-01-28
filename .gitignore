@@ -1,0 +1,64 @@
+# WordPress core - не отслеживаем
+wordpress/
+wp-admin/
+wp-includes/
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-config-sample.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# Конфигурация
+wp-config.php            # Создаем из wp-config-sample.php
+/wp-config-local.php     # Локальные настройки
+
+# Загрузки
+wp-content/uploads/*
+!wp-content/uploads/.gitkeep  # Пустой файл для структуры
+
+# Кэш и временные файлы
+wp-content/cache/*
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/upgrade/
+wp-content/updraft/
+wp-content/themes/
+!wp-content/themes/_sv1
+
+# Логи
+*.log
+error_log
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# Композитор
+vendor/
+composer.lock
+
+# Базы данных
+*.sql
+*.sql.gz
