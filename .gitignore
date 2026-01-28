@@ -63,4 +63,4 @@ composer.lock
 # Базы данных
 *.sql
 *.sql.gz
-!wp-content/backup/*.sql
+!wp-content/backups/*.sql
