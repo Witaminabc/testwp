@@ -170,3 +170,5 @@ function add_jfif_support($mimes) {
     $mimes['jif'] = 'image/jpeg';
     return $mimes;
 }
+
+// ==================== with dump wp_cli ====================
