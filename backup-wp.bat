@@ -13,7 +13,7 @@ set MYSQL_PATH=D:\osPanel543\OSPanel\modules\database\MySQL-5.6\bin\mysqldump.ex
 REM Дата
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
 set "timestamp=%dt:~0,8%-%dt:~8,6%"
-set "filename=backups\db-%timestamp%.sql"
+set "filename=wp-content\backups\db-%timestamp%.sql"
 
 REM ПРЯМОЙ дамп через mysqldump OSPanel (ОБХОДИТ WP-CLI!)
 echo 📦 Бэкап БД: %filename%
