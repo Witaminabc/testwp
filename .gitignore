@@ -35,7 +35,7 @@ wp-content/backups/
 wp-content/upgrade/
 wp-content/updraft/
 wp-content/themes/
-!wp-content/themes/_sv1
+!wp-content/themes/_sv1/
 
 # Логи
 *.log
