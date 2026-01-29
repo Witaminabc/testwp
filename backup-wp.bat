@@ -36,5 +36,31 @@ if exist "%filename%" (
 ) else (
     echo ❌ Бэкап не создался!
 )
+REM 🔧 УМНЫЙ COMPOSER
+echo 📦 Проверяем зависимости Composer...
+if exist composer.json (
+    echo 📄 composer.json найден.
+
+    REM 1. Сохраняем текущее состояние (опционально, для отката)
+    copy composer.json composer.json.bak >nul
+
+    REM 2. Обновляем зависимости с перехватом ошибок
+    echo 🔄 Запускаем composer install...
+    call composer install --no-dev --optimize-autoloader --no-interaction 2> composer-error.log
+
+    REM 3. Проверяем, была ли ошибка
+    if errorlevel 1 (
+        echo ⚠️ Composer завершился с ошибкой! См. composer-error.log
+        echo ⚠️ Восстанавливаем старый composer.json...
+        copy composer.json.bak composer.json /Y >nul
+    ) else (
+        echo ✅ Зависимости успешно обновлены.
+        del composer-error.log 2>nul
+    )
+    del composer.json.bak 2>nul
+) else (
+    echo ℹ️ composer.json не найден, пропускаем.
+)
+
 
 pause
